@@ -57,7 +57,6 @@ body.dark {
     border-radius: 4px;
     box-shadow: 0 0 24px rgba(0, 0, 0, .1);
     box-shadow: 0 0 24px var(--color-shadow2);
-    height: 455px;
     left: 50%;
     position: absolute;
     top: 50%;
