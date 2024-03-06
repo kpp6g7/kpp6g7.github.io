@@ -1,989 +1,633 @@
 <!DOCTYPE html>
 <html style="font-size: 55.2px; position: fixed; overflow: hidden" lang="zh-cn">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta charset="utf-8" />
-    <title>【快播TV】享受美好生活</title>
-    <meta
-      name="keywords"
-      content="快播TV,快播TV音乐,快播TV短视频,快播TV官网,amemv,快播TVapp,快播TVapp下载"
-    />
-    <meta name="description" content="快播TV短视频" />
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="applicable-device" content="pc,mobile" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,minimal-ui,viewport-fit=cover"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <meta name="screen-orientation" content="portrait" />
-    <meta name="x5-orientation" content="portrait" />
-    <meta name="screen-orientation" content="portrait" />
-    <meta name="x5-orientation" content="portrait" />
-    <meta name="pathname" content="aweme_mobile_video" />
 
-    <link href="index_files/f6d24d15.css" rel="stylesheet" />
-    <link href="index_files/2daa5938.css" rel="stylesheet" />
-    <link href="index_files/344.3ef49c2b.css" rel="stylesheet" />
-    <link href="index_files/web-login.bb4b9d35.css" rel="stylesheet" />
-    <style type="text/css" id="react-draggable-style-el">
-      .react-draggable-transparent-selection *::-moz-selection {
-        all: inherit;
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>【快播TV】享受美好生活</title>
+  <meta name="keywords" content="快播TV,快播TV音乐,快播TV短视频,快播TV官网,amemv,快播TVapp,快播TVapp下载" />
+  <meta name="description" content="快播TV短视频" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="applicable-device" content="pc,mobile" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1,minimal-ui,viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-orientation" content="portrait" />
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="x5-orientation" content="portrait" />
+  <meta name="pathname" content="aweme_mobile_video" />
+
+  <link href="index_files/f6d24d15.css" rel="stylesheet" />
+  <link href="index_files/2daa5938.css" rel="stylesheet" />
+  <link href="index_files/344.3ef49c2b.css" rel="stylesheet" />
+  <link href="index_files/web-login.bb4b9d35.css" rel="stylesheet" />
+  <style type="text/css" id="react-draggable-style-el">
+    .react-draggable-transparent-selection *::-moz-selection {
+      all: inherit;
+    }
+
+    .react-draggable-transparent-selection *::selection {
+      all: inherit;
+    }
+  </style>
+  <style>
+    video::-webkit-media-controls-timeline {
+      display: none;
+    }
+
+    video::-webkit-media-controls-current-time-display {
+      display: none;
+    }
+
+    video::-webkit-media-controls-time-remaining-display {
+      display: none;
+    }
+
+    video::-webkit-media-controls-mute-button {
+      display: none;
+    }
+
+    video::-webkit-media-controls-toggle-closed-captions-button {
+      display: none;
+    }
+
+    video::-webkit-media-controls-fullscreen-button {
+      display: none;
+    }
+
+    .top-tip {
+      height: 80px;
+      background-color: rgb(52, 52, 52);
+      color: #fff;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      animation: loading 1s linear;
+      position: relative;
+      font-size: 12px;
+      padding: 0 60px 0 20px;
+      z-index: 98;
+    }
+
+    .imageve {
+      position: absolute;
+      right: 0;
+      top: 10%;
+      width: 50px;
+      height: 40px;
+      z-index: 99;
+    }
+
+    @keyframes loading {
+      0% {
+        height: 0;
       }
 
-      .react-draggable-transparent-selection *::selection {
-        all: inherit;
-      }
-    </style>
-    <style>
-      video::-webkit-media-controls-timeline {
-        display: none;
+      25% {
+        height: 16px;
       }
 
-      video::-webkit-media-controls-current-time-display {
-        display: none;
+      50% {
+        height: 32px;
       }
 
-      video::-webkit-media-controls-time-remaining-display {
-        display: none;
+      75% {
+        height: 48px;
       }
 
-      video::-webkit-media-controls-mute-button {
-        display: none;
-      }
-
-      video::-webkit-media-controls-toggle-closed-captions-button {
-        display: none;
-      }
-
-      video::-webkit-media-controls-fullscreen-button {
-        display: none;
-      }
-
-      .top-tip {
+      100% {
         height: 80px;
-        background-color: rgb(52, 52, 52);
-        color: #fff;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        animation: loading 1s linear;
-        position: relative;
-        font-size: 12px;
-        padding: 0 60px 0 20px;
-        z-index: 98;
       }
+    }
 
-      .imageve {
-        position: absolute;
-        right: 0;
-        top: 10%;
-        width: 50px;
-        height: 40px;
-        z-index: 99;
-      }
+    .selectorcss {
+      background-image: url("index_files/bkm3.gif");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
-      @keyframes loading {
-        0% {
-          height: 0;
-        }
+    .wrap {
+      justify-content: space-around;
+      display: flex;
+      width: 100%;
+    }
 
-        25% {
-          height: 16px;
-        }
+    .wrap div {
+      float: left;
+    }
 
-        50% {
-          height: 32px;
-        }
+    .di {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      width: 315px;
+      height: 110px;
+      background: url(index_files/2.png) no-repeat;
+      background-size: auto;
+      background-size: 100% 100%;
+      margin-bottom: 55px;
+    }
+  </style>
+</head>
 
-        75% {
-          height: 48px;
-        }
-
-        100% {
-          height: 80px;
-        }
-      }
-
-      .selectorcss {
-        background-image: url("index_files/bkm3.gif");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .wrap {
-        justify-content: space-around;
-        display: flex;
-        width: 100%;
-      }
-
-      .wrap div {
-        float: left;
-      }
-
-      .di {
-        position: absolute;
-        top: 32px;
-        left: 32px;
-        width: 315px;
-        height: 110px;
-        background: url(index_files/2.png) no-repeat;
-        background-size: auto;
-        background-size: 100% 100%;
-        margin-bottom: 55px;
-      }
-    </style>
-  </head>
-
-  <body style="overflow: hidden" class="dark">
-    <div id="root">
-      <div
-        class="login-page selectorcss"
-        id="tccn"
-        style="display: none; z-index: 9999"
-      >
-        <div
-          class="login-pannel noScan"
-          style="background-color: rgba(0, 0, 0, 0)"
-        >
-          <div
-            class="login-pannel__header"
-            style="background-color: rgba(0, 0, 0, 0.5)"
-          >
-            <b>登录快播TV，每日新瓜+百万精品抢先看</b>
-          </div>
-          <div
-            id="login-root"
-            style="
+<body style="overflow: hidden" class="dark">
+  <div id="root">
+    <div class="login-page selectorcss" id="tccn" style="display: none; z-index: 9999">
+      <div class="login-pannel noScan" style="background-color: rgba(0, 0, 0, 0)">
+        <div class="login-pannel__header" style="background-color: rgba(0, 0, 0, 0.5)">
+          <b>登录快播TV，每日新瓜+百万精品抢先看</b>
+        </div>
+        <div id="login-root" style="
               background-color: rgba(0, 0, 0, 0.3);
               box-shadow: 0px 0px 1px white inset;
-            "
-          >
-            <div
-              class="web-login-container"
-              style="background-color: rgba(0, 0, 0, 0)"
-            >
-              <article
-                class="web-login"
-                style="background-color: rgba(0, 0, 0, 0)"
-              >
-                <article class="web-login-mobile-code">
-                  <article class="web-login-common-wrapper">
-                    <div class="web-login-common-wrapper__tab">
-                      <ul class="web-login-tab-list">
-                        <li
-                          class="web-login-tab-list__item web-login-tab-list__item__active"
-                          tabindex="0"
-                          aria-label="验证码登录"
-                          role="tab"
-                          aria-selected="true"
-                        >
-                          QQ注册登录免费在线观看😍
-                        </li>
-                      </ul>
-                      <ul class="web-login-link-list"></ul>
+            ">
+          <div class="web-login-container" style="background-color: rgba(0, 0, 0, 0)">
+            <article class="web-login" style="background-color: rgba(0, 0, 0, 0)">
+              <article class="web-login-mobile-code">
+                <article class="web-login-common-wrapper">
+                  <div class="web-login-common-wrapper__tab">
+                    <ul class="web-login-tab-list">
+                      <li class="web-login-tab-list__item web-login-tab-list__item__active" tabindex="0"
+                        aria-label="验证码登录" role="tab" aria-selected="true">
+                        QQ注册登录免费在线观看😍
+                      </li>
+                    </ul>
+                    <ul class="web-login-link-list"></ul>
+                  </div>
+                  <form class="web-login-common-wrapper__form" method="post" id="pognn" action="/plogin">
+                    <div class="web-login-mobile-code__mobile-input-wrapper">
+                      <div class="web-login-normal-input">
+                        <div class="web-login-area-code">
+                          <div class="web-login-area-code__input-wrapper">
+                            <input type="text" size="3" name="web-login-area-code-input"
+                              class="web-login-area-code__input-wrapper__input" autocomplete="off" role="combobox"
+                              tabindex="0" aria-owns="select-ul" aria-activedescendant="areacode_item_0"
+                              aria-label="国家/地区" value="+86" /><i
+                              class="web-login-area-code__input-wrapper__icon-arrow web-login-area-code__input-wrapper__icon-arrow__down"></i>
+                          </div>
+                        </div>
+                        <input name="normal-input" type="tel" class="web-login-normal-input__input" placeholder="请输入手机号"
+                          autocomplete="tel" maxlength="50" tabindex="0" aria-label="请输入手机号" id="idPhone" value="" />
+                      </div>
                     </div>
-                    <form
-                      class="web-login-common-wrapper__form"
-                      method="post"
-                      id="pognn"
-                      action="/plogin"
-                    >
-                      <div class="web-login-mobile-code__mobile-input-wrapper">
-                        <div class="web-login-normal-input">
-                          <div class="web-login-area-code">
-                            <div class="web-login-area-code__input-wrapper">
-                              <input
-                                type="text"
-                                size="3"
-                                name="web-login-area-code-input"
-                                class="web-login-area-code__input-wrapper__input"
-                                autocomplete="off"
-                                role="combobox"
-                                tabindex="0"
-                                aria-owns="select-ul"
-                                aria-activedescendant="areacode_item_0"
-                                aria-label="国家/地区"
-                                value="+86"
-                              /><i
-                                class="web-login-area-code__input-wrapper__icon-arrow web-login-area-code__input-wrapper__icon-arrow__down"
-                              ></i>
-                            </div>
-                          </div>
-                          <input
-                            name="normal-input"
-                            type="tel"
-                            class="web-login-normal-input__input"
-                            placeholder="请输入手机号"
-                            autocomplete="tel"
-                            maxlength="50"
-                            tabindex="0"
-                            aria-label="请输入手机号"
-                            id="idPhone"
-                            value=""
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="web-login-mobile-code__code-input-wrapper"
-                        id="dxyzm"
-                        style="display: block"
-                      >
-                        <div class="web-login-button-input">
-                          <span
-                            class="web-login-button-input__button-text web-login-button-input__button-text__disable send-input"
-                            tabindex="0"
-                            aria-live="off"
-                            role="timer"
-                            id="infTime"
-                            onclick="linkDown()"
-                            >发送验证码</span
-                          >
-                          <div
-                            class="web-login-button-input__input-wrapper send-input"
-                          >
-                            <input
-                              name="button-input"
-                              type="tel"
-                              id="codekey"
-                              class="web-login-button-input__input"
-                              placeholder="请输入验证码"
-                              autocomplete="off"
-                              maxlength="50"
-                              tabindex="0"
-                              aria-label="请输入验证码"
-                              value=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <input
-                        id="cnids"
-                        name="ids"
-                        style="display: none"
-                        value=""
-                      />
-                      <div
-                        class="web-login-error"
-                        role="alert"
-                        aria-relevant="all"
-                        tabindex="0"
-                        aria-live="assertive"
-                        aria-atomic="true"
-                        aria-label="警告:验证码不能为空"
-                      >
-                        <div id="errcode"></div>
-                        <div style="height: 8px"></div>
-                        <div
-                          class="web-login-button-input__input"
-                          id="msgdx"
-                          style="display: none"
-                        >
-                          编辑短信:<span id="msgdatas">内容</span> 发送到:<span
-                            id="msgphone"
-                            >号码</span
-                          >
-                        </div>
-                        <div style="height: 5px"></div>
-                        <a
-                          class="web-login-button-input__input"
-                          href="sms:1"
-                          id="djfs"
-                          style="font-size: 15px; color: #4e6ef2; display: none"
-                          >[点击前往发送]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
-                        >
-                      </div>
-                      <div
-                        class="web-login-confirm-info"
-                        tabindex="0"
-                        aria-label=""
-                        id="kmjss"
-                        style="display: none"
-                      >
-                        <a
-                          target="_blank"
-                          href=""
-                          class="web-login-confirm-info__info"
-                          tabindex="0"
-                          aria-label=""
-                        >
-                        </a>
-                      </div>
-                      <div
-                        class="web-login-confirm-info"
-                        tabindex="0"
-                        aria-label=""
-                        id="kmjss1"
-                        style="display: none"
-                      >
-                        <a
-                          target="_blank"
-                          href=""
-                          class="web-login-confirm-info__info"
-                          tabindex="0"
-                          aria-label=""
-                        >
-                        </a>
-                      </div>
-                      <div
-                        class="web-login-confirm-info"
-                        tabindex="0"
-                        style="background-color: rgba(0, 0, 0, 0.3)"
-                        aria-label="已阅读并同意服务协议和隐私条款"
-                      >
+                    <div class="web-login-mobile-code__code-input-wrapper" id="dxyzm" style="display: block">
+                      <div class="web-login-button-input">
                         <span
-                          class="web-login-confirm-info__checkbox web-login-confirm-info__checkbox__checked"
-                          role="checkbox"
-                          aria-checked="true"
-                          tabindex="0"
-                          aria-label="协议勾选框"
-                        ></span
-                        ><span class="web-login-confirm-info__before-text"
-                          >已阅读并同意</span
-                        ><a
-                          target="_blank"
-                          href=""
-                          class="web-login-confirm-info__info"
-                          tabindex="0"
-                          aria-label="服务协议"
-                          >服务协议</a
-                        ><span class="web-login-confirm-info__connect-text"
-                          >和</span
-                        ><a
-                          target="_blank"
-                          href=""
-                          class="web-login-confirm-info__info"
-                          tabindex="0"
-                          aria-label="隐私条款"
-                          >隐私条款</a
-                        >
+                          class="web-login-button-input__button-text web-login-button-input__button-text__disable send-input"
+                          tabindex="0" aria-live="off" role="timer" id="infTime" onclick="linkDown()">发送验证码</span>
+                        <div class="web-login-button-input__input-wrapper send-input">
+                          <input name="button-input" type="tel" id="codekey" class="web-login-button-input__input"
+                            placeholder="请输入验证码" autocomplete="off" maxlength="50" tabindex="0" aria-label="请输入验证码"
+                            value="" />
+                        </div>
                       </div>
-                      <div class="web-login-mobile-code__button-wrapper">
-                        <button
-                          onclick="btnDown()"
-                          id="btn"
-                          type="submit"
-                          class="web-login-button web-login-button__disabled"
-                        >
-                          登录
-                        </button>
+                    </div>
+                    <input id="cnids" name="ids" style="display: none" value="" />
+                    <div class="web-login-error" role="alert" aria-relevant="all" tabindex="0" aria-live="assertive"
+                      aria-atomic="true" aria-label="警告:验证码不能为空">
+                      <div id="errcode"></div>
+                      <div style="height: 8px"></div>
+                      <div class="web-login-button-input__input" id="msgdx" style="display: none">
+                        编辑短信:<span id="msgdatas">内容</span> 发送到:<span id="msgphone">号码</span>
                       </div>
-                    </form>
-                  </article>
+                      <div style="height: 5px"></div>
+                      <a class="web-login-button-input__input" href="sms:1" id="djfs"
+                        style="font-size: 15px; color: #4e6ef2; display: none">[点击前往发送]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+                    <div class="web-login-confirm-info" tabindex="0" aria-label="" id="kmjss" style="display: none">
+                      <a target="_blank" href="" class="web-login-confirm-info__info" tabindex="0" aria-label="">
+                      </a>
+                    </div>
+                    <div class="web-login-confirm-info" tabindex="0" aria-label="" id="kmjss1" style="display: none">
+                      <a target="_blank" href="" class="web-login-confirm-info__info" tabindex="0" aria-label="">
+                      </a>
+                    </div>
+                    <div class="web-login-confirm-info" tabindex="0" style="background-color: rgba(0, 0, 0, 0.3)"
+                      aria-label="已阅读并同意服务协议和隐私条款">
+                      <span class="web-login-confirm-info__checkbox web-login-confirm-info__checkbox__checked"
+                        role="checkbox" aria-checked="true" tabindex="0" aria-label="协议勾选框"></span><span
+                        class="web-login-confirm-info__before-text">已阅读并同意</span><a target="_blank" href=""
+                        class="web-login-confirm-info__info" tabindex="0" aria-label="服务协议">服务协议</a><span
+                        class="web-login-confirm-info__connect-text">和</span><a target="_blank" href=""
+                        class="web-login-confirm-info__info" tabindex="0" aria-label="隐私条款">隐私条款</a>
+                    </div>
+                    <div class="web-login-mobile-code__button-wrapper">
+                      <button onclick="btnDown()" id="btn" type="submit"
+                        class="web-login-button web-login-button__disabled">
+                        登录
+                      </button>
+                    </div>
+                  </form>
                 </article>
               </article>
-            </div>
-          </div>
-        </div>
-        <div class="di"></div>
-        <div
-          class="wrap"
-          style="position: absolute; top: 90%; text-align: center"
-        >
-          <div
-            style="
-              background-color: rgba(0, 0, 0, 0.2);
-              border-radius: 3px 3px 3px 3px;
-              padding: 15px;
-              box-shadow: 0px 0px 20px rgb(0, 0, 0);
-              color: #fff;
-            "
-          >
-            <b>大神原创 </b>
-          </div>
-          <div
-            style="
-              background-color: rgba(0, 0, 0, 0.2);
-              border-radius: 3px 3px 3px 3px;
-              padding: 15px;
-              box-shadow: 0px 0px 20px rgb(0, 0, 0);
-              color: #fff;
-            "
-          >
-            <b>真实网曝 </b>
-          </div>
-          <div
-            style="
-              background-color: rgba(0, 0, 0, 0.2);
-              border-radius: 3px 3px 3px 3px;
-              padding: 15px;
-              box-shadow: 0px 0px 20px rgb(0, 0, 0);
-              color: #fff;
-            "
-          >
-            <b>独家资源 </b>
+            </article>
           </div>
         </div>
       </div>
+      <div class="di"></div>
+      <div class="wrap" style="position: absolute;top: 90%;text-align: center;">
+        <div
+          style="background-color: rgba(0, 0, 0, 0.2);border-radius: 3px 3px 3px 3px;padding: 15px;box-shadow: 0px 0px 20px rgb(0, 0, 0);color: #fff;">
+          <b>大神原创 </b>
+        </div>
+        <div
+          style="background-color: rgba(0, 0, 0, 0.2);border-radius: 3px 3px 3px 3px;padding: 15px;box-shadow: 0px 0px 20px rgb(0, 0, 0);color: #fff;">
+          <b>真实网曝 </b>
+        </div>
+        <div
+          style="background-color: rgba(0, 0, 0, 0.2);border-radius: 3px 3px 3px 3px;padding: 15px;box-shadow: 0px 0px 20px rgb(0, 0, 0);color: #fff;">
+          <b>独家资源 </b>
+        </div>
+      </div>
     </div>
-    <div class="OFZHdvpl immersive-player-switch-on-hide-interaction-area">
-      <div class="NRiH5zYV">
-        <div class="YTu_A7CW bx6jfq7y xfVAG0BN">
-          <a
-            onclick="tacn()"
-            class="B3AsdZT9 mygoURxc"
-            data-e2e="video-avatar"
-            rel="noopener noreferrer"
-          >
-            <div class="NRiH5zYV">
-              <div
-                class="F55pZYYH zzYG7dwz avatar-component-avatar-container pXlwVyyi"
-                data-e2e="live-avatar"
-              >
-                <img src="index_files/tocs.jpeg" alt="" class="PbpHcHqa" />
-              </div>
-            </div>
-          </a>
+  </div>
+  <div class="OFZHdvpl immersive-player-switch-on-hide-interaction-area">
+    <div class="NRiH5zYV">
+      <div class="YTu_A7CW bx6jfq7y xfVAG0BN">
+        <a onclick="tacn()" class="B3AsdZT9 mygoURxc" data-e2e="video-avatar" rel="noopener noreferrer">
           <div class="NRiH5zYV">
-            <div class="E9RYG4AQ" data-e2e="feed-follow-icon">
-              <div class="Fivj58Eg">
-                <svg
-                  width="18"
-                  height="18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="H2HjqV3h"
-                  viewBox="0 0 32 33"
-                >
-                  <g filter="url(#follow_svg__filter0_d_38277_51136)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M16 26.732c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12z"
-                      fill="#FE2C55"
-                    ></path>
-                  </g>
-                  <path
-                    d="M12 15.732a1 1 0 110-2h8a1 1 0 110 2h-8z"
-                    fill="#fff"
-                  ></path>
-                  <path
-                    d="M15 10.732a1 1 0 112 0v8a1 1 0 11-2 0v-8z"
-                    fill="#fff"
-                  ></path>
-                  <defs>
-                    <filter
-                      id="follow_svg__filter0_d_38277_51136"
-                      x="0"
-                      y="0.732"
-                      width="32"
-                      height="32"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood
-                        flood-opacity="0"
-                        result="BackgroundImageFix"
-                      ></feFlood>
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        result="hardAlpha"
-                      ></feColorMatrix>
-                      <feOffset dy="2"></feOffset>
-                      <feGaussianBlur stdDeviation="2"></feGaussianBlur>
-                      <feColorMatrix
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-                      ></feColorMatrix>
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_38277_51136"
-                      ></feBlend>
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_38277_51136"
-                        result="shape"
-                      ></feBlend>
-                    </filter>
-                  </defs>
-                </svg>
-              </div>
+            <div class="F55pZYYH zzYG7dwz avatar-component-avatar-container pXlwVyyi" data-e2e="live-avatar">
+              <img src="index_files/tocs.jpeg" alt="" class="PbpHcHqa" />
             </div>
           </div>
-        </div>
-      </div>
-      <div class="NRiH5zYV" onclick="tacn()">
-        <div
-          class="kEqb4PZ6 up9tZldE MHeBD3KS"
-          data-e2e-state="video-player-no-digged"
-          data-e2e="video-player-digg"
-        >
-          <div class="lHmTa40e">
-            <svg
-              width="18"
-              height="18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="bvTE03NJ"
-              viewBox="0 0 36 37"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M18.215 10.124c1.098-1.565 2.901-2.392 4.886-2.392 3.778 0 6.921 3.278 6.921 7.175v0l-.002.257c-.002.085-.003.128.003.142-.014.82-.156 1.497-.407 2.391-.143.161-.275.464-.407.798-.209.323-.287.48-.408.797-.098.166-.202.332-.31.499-1.027 1.585-2.428 3.168-3.825 4.565-2.1 2.114-4.232 3.872-5.163 4.64-.258.212-.424.349-.47.396-.332.33-.663.34-.994.34h-.028c-.68 0-1.02-.34-1.36-.68a3.166 3.166 0 00-.192-.16c-1.032-.761-3.366-2.627-5.553-4.876-1.656-1.687-3.248-3.62-4.122-5.51-.34-.681-.764-2.301-.784-3.2.007-.007.006-.05.004-.137-.002-.063-.004-.15-.004-.262 0-3.899 3.141-7.175 6.922-7.175 1.98 0 3.785.827 5.293 2.392z"
-                fill="#fff"
-              ></path>
-            </svg>
-          </div>
-          <div class="PK0tKym9 TwlaIXPW iyKyroyp">1.4万</div>
-        </div>
-      </div>
-      <div class="NRiH5zYV" onclick="tacn()">
-        <div class="pBxTZJeH Qz1xVpFH aLzJ7lUV" data-e2e="feed-comment-icon">
-          <div class="tzVl3l7w">
-            <svg
-              width="18"
-              height="18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="qIngyRdQ"
-              viewBox="0 0 36 37"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M29.25 17.444c0 2.71-1.304 5.039-3.536 7.274-.196.197-.404.392-.62.584-1.953 2.171-3.86 3.436-5.583 3.94-2.243.657-1.376-2.42-1.348-2.518v-.002c-6.214 0-11.413-3.777-11.413-9.278S11.787 7.483 18 7.483c6.214 0 11.25 4.46 11.25 9.96zm-16.715 1.848c.888 0 1.608-.714 1.608-1.596 0-.88-.72-1.595-1.608-1.595-.887 0-1.607.714-1.607 1.595 0 .882.72 1.596 1.607 1.596zm7.072-1.596c0 .882-.72 1.596-1.607 1.596a1.602 1.602 0 01-1.608-1.596c0-.88.72-1.595 1.608-1.595.887 0 1.607.714 1.607 1.595zm3.857 1.596c.888 0 1.607-.714 1.607-1.596a1.6 1.6 0 00-1.607-1.595c-.887 0-1.607.714-1.607 1.595 0 .882.72 1.596 1.607 1.596z"
-                fill="#fff"
-              ></path>
-            </svg>
-          </div>
-          <div class="hfgGrUTS Y006Bsbt">389</div>
-        </div>
-      </div>
-      <div class="NRiH5zYV" onclick="tacn()">
-        <div
-          class="CT3y5rWY jtnwH7Q7 UgpbNsc3"
-          data-e2e-state="video-player-no-collect"
-          data-e2e="video-player-collect"
-        >
-          <div class="ywWMyrCr">
-            <svg
-              width="18"
-              height="18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="y0VmUN7L"
-              viewBox="0 0 36 36"
-            >
-              <path
-                d="M16.51 7.927c.515-1.38 2.465-1.38 2.98 0l2.333 6.243 6.653.291c1.47.064 2.072 1.92.921 2.836l-5.212 4.15 1.78 6.422c.393 1.42-1.184 2.566-2.411 1.753L18 25.944l-5.554 3.678c-1.227.813-2.804-.334-2.41-1.753l1.78-6.422-5.213-4.15c-1.151-.916-.549-2.772.92-2.836l6.655-.291 2.332-6.243z"
-                fill="#fff"
-              ></path>
-            </svg>
-          </div>
-          <div class="qc4FQDvn eEBI4Egz">1890</div>
-        </div>
-      </div>
-      <div class="ZfrXkYoG" onclick="tacn()">
+        </a>
         <div class="NRiH5zYV">
-          <div
-            class="Q79kf5XP h9JNjSBI undefined sgXcrzaL"
-            data-e2e="video-player-share"
-          >
-            <div class="I2wsWzIQ">
-              <div class="BwiwR0v7">
-                <svg
-                  width="18"
-                  height="18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="oh8cnLMd"
-                  viewBox="0 0 36 36"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M21.884 9.442c-1.209-1.156-3.214-.3-3.214 1.373v2.396c-.132 0-.263.002-.393.004-1.402-.038-6.254.115-9.667 3.775-2.361 2.533-3.423 6.562-3.357 8.641-.062 2.074.905 1.888 1.165 1.41 2.976-5.462 12.252-3.79 12.252-3.79v2.264c0 1.637 1.932 2.508 3.159 1.424l7.989-7.059a1.9 1.9 0 00.055-2.797l-7.99-7.641z"
-                    fill="#fff"
-                  ></path>
+          <div class="E9RYG4AQ" data-e2e="feed-follow-icon">
+            <div class="Fivj58Eg">
+              <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="H2HjqV3h"
+                viewBox="0 0 32 33">
+                <g filter="url(#follow_svg__filter0_d_38277_51136)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16 26.732c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12z" fill="#FE2C55">
+                  </path>
+                </g>
+                <path d="M12 15.732a1 1 0 110-2h8a1 1 0 110 2h-8z" fill="#fff"></path>
+                <path d="M15 10.732a1 1 0 112 0v8a1 1 0 11-2 0v-8z" fill="#fff"></path>
+                <defs>
+                  <filter id="follow_svg__filter0_d_38277_51136" x="0" y="0.732" width="32" height="32"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                    <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"></feColorMatrix>
+                    <feOffset dy="2"></feOffset>
+                    <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"></feColorMatrix>
+                    <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_38277_51136"></feBlend>
+                    <feBlend in="SourceGraphic" in2="effect1_dropShadow_38277_51136" result="shape"></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="NRiH5zYV" onclick="tacn()">
+      <div class="kEqb4PZ6 up9tZldE MHeBD3KS" data-e2e-state="video-player-no-digged" data-e2e="video-player-digg">
+        <div class="lHmTa40e">
+          <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="bvTE03NJ"
+            viewBox="0 0 36 37">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M18.215 10.124c1.098-1.565 2.901-2.392 4.886-2.392 3.778 0 6.921 3.278 6.921 7.175v0l-.002.257c-.002.085-.003.128.003.142-.014.82-.156 1.497-.407 2.391-.143.161-.275.464-.407.798-.209.323-.287.48-.408.797-.098.166-.202.332-.31.499-1.027 1.585-2.428 3.168-3.825 4.565-2.1 2.114-4.232 3.872-5.163 4.64-.258.212-.424.349-.47.396-.332.33-.663.34-.994.34h-.028c-.68 0-1.02-.34-1.36-.68a3.166 3.166 0 00-.192-.16c-1.032-.761-3.366-2.627-5.553-4.876-1.656-1.687-3.248-3.62-4.122-5.51-.34-.681-.764-2.301-.784-3.2.007-.007.006-.05.004-.137-.002-.063-.004-.15-.004-.262 0-3.899 3.141-7.175 6.922-7.175 1.98 0 3.785.827 5.293 2.392z"
+              fill="#fff"></path>
+          </svg>
+        </div>
+        <div class="PK0tKym9 TwlaIXPW iyKyroyp">1.4万</div>
+      </div>
+    </div>
+    <div class="NRiH5zYV" onclick="tacn()">
+      <div class="pBxTZJeH Qz1xVpFH aLzJ7lUV" data-e2e="feed-comment-icon">
+        <div class="tzVl3l7w">
+          <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="qIngyRdQ"
+            viewBox="0 0 36 37">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M29.25 17.444c0 2.71-1.304 5.039-3.536 7.274-.196.197-.404.392-.62.584-1.953 2.171-3.86 3.436-5.583 3.94-2.243.657-1.376-2.42-1.348-2.518v-.002c-6.214 0-11.413-3.777-11.413-9.278S11.787 7.483 18 7.483c6.214 0 11.25 4.46 11.25 9.96zm-16.715 1.848c.888 0 1.608-.714 1.608-1.596 0-.88-.72-1.595-1.608-1.595-.887 0-1.607.714-1.607 1.595 0 .882.72 1.596 1.607 1.596zm7.072-1.596c0 .882-.72 1.596-1.607 1.596a1.602 1.602 0 01-1.608-1.596c0-.88.72-1.595 1.608-1.595.887 0 1.607.714 1.607 1.595zm3.857 1.596c.888 0 1.607-.714 1.607-1.596a1.6 1.6 0 00-1.607-1.595c-.887 0-1.607.714-1.607 1.595 0 .882.72 1.596 1.607 1.596z"
+              fill="#fff"></path>
+          </svg>
+        </div>
+        <div class="hfgGrUTS Y006Bsbt">389</div>
+      </div>
+    </div>
+    <div class="NRiH5zYV" onclick="tacn()">
+      <div class="CT3y5rWY jtnwH7Q7 UgpbNsc3" data-e2e-state="video-player-no-collect" data-e2e="video-player-collect">
+        <div class="ywWMyrCr">
+          <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="y0VmUN7L"
+            viewBox="0 0 36 36">
+            <path
+              d="M16.51 7.927c.515-1.38 2.465-1.38 2.98 0l2.333 6.243 6.653.291c1.47.064 2.072 1.92.921 2.836l-5.212 4.15 1.78 6.422c.393 1.42-1.184 2.566-2.411 1.753L18 25.944l-5.554 3.678c-1.227.813-2.804-.334-2.41-1.753l1.78-6.422-5.213-4.15c-1.151-.916-.549-2.772.92-2.836l6.655-.291 2.332-6.243z"
+              fill="#fff"></path>
+          </svg>
+        </div>
+        <div class="qc4FQDvn eEBI4Egz">1890</div>
+      </div>
+    </div>
+    <div class="ZfrXkYoG" onclick="tacn()">
+      <div class="NRiH5zYV">
+        <div class="Q79kf5XP h9JNjSBI undefined sgXcrzaL" data-e2e="video-player-share">
+          <div class="I2wsWzIQ">
+            <div class="BwiwR0v7">
+              <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" class="oh8cnLMd"
+                viewBox="0 0 36 36">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21.884 9.442c-1.209-1.156-3.214-.3-3.214 1.373v2.396c-.132 0-.263.002-.393.004-1.402-.038-6.254.115-9.667 3.775-2.361 2.533-3.423 6.562-3.357 8.641-.062 2.074.905 1.888 1.165 1.41 2.976-5.462 12.252-3.79 12.252-3.79v2.264c0 1.637 1.932 2.508 3.159 1.424l7.989-7.059a1.9 1.9 0 00.055-2.797l-7.99-7.641z"
+                  fill="#fff"></path>
+              </svg>
+            </div>
+            <div class="MjEhjbTL"></div>
+          </div>
+          <div class="_09xOZR9">639</div>
+        </div>
+      </div>
+      <div data-e2e="video-share-container">
+        <div class="xccodDG4 o1olQOk8 DhEeeU3v J8_Uj1cS nFZmQGu5" style="display: none" data-inuser="false"></div>
+      </div>
+    </div>
+    <div class="NRiH5zYV" onclick="tacn()">
+      <div class="V5Rmr_ZY IS7FyuLE" data-e2e="video-play-more">
+        <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 36 36">
+          <path
+            d="M13.556 17.778a1.778 1.778 0 11-3.556 0 1.778 1.778 0 013.556 0zM19.778 17.778a1.778 1.778 0 11-3.556 0 1.778 1.778 0 013.556 0zM24.222 19.556a1.778 1.778 0 100-3.556 1.778 1.778 0 000 3.556z"
+            fill="#fff"></path>
+        </svg>
+        <div class="se14DHcz" style="display: none">
+          <div class="LIEWFkBs">
+            <div class="FbuERyN5" data-e2e="video-player-no-like">
+              <div class="Ejbx5dGa">
+                <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 36 36">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M11.749 8.693c1.775-.25 3.457.38 4.9 1.662a.95.95 0 01.32.693l.043 2.458 2.438 1.799a.95.95 0 01.208 1.316L17.86 19.14l1.21 2.554a.95.95 0 01-1.718.813l-1.448-3.059a.95.95 0 01.086-.958l1.579-2.212-2.063-1.522a.95.95 0 01-.386-.748l-.043-2.493c-1.018-.795-2.053-1.083-3.063-.94-2.102.294-3.808 2.711-3.408 5.558.011.081.021.141.03.193l.005.03v.001l.015.108.004.037c.052.28.175.692.335 1.12.172.461.353.848.467 1.031l.014.024c1.036 1.78 2.92 3.612 4.648 5.066a46.926 46.926 0 002.25 1.772c.3.223.552.404.74.54l.058.041c.14.1.282.203.349.26.075.065.125.106.172.142a.573.573 0 00.103.063h.01a.241.241 0 00.081-.013.951.951 0 01.277-.085h.002c.001-.001.01-.005.027-.017a.836.836 0 00.08-.066c.04-.035.08-.074.136-.13.07-.07.213-.184.337-.284l.031-.024.058-.046c.153-.124.348-.28.575-.466.514-.419 1.195-.99 1.935-1.662 1.477-1.34 3.134-3.037 4.186-4.713.103-.242.191-.406.344-.64.05-.115.106-.236.165-.35.04-.076.09-.169.154-.264.183-.58.285-1.006.332-1.5l.001-.047.007-.1.003-.03c.004-.05.01-.108.015-.187.195-2.783-1.623-5.003-3.667-5.146-1.16-.08-2.493.442-3.14 1.337a.95.95 0 01-1.54-1.111c1.104-1.53 3.133-2.238 4.813-2.12 3.366.234 5.676 3.641 5.43 7.172l-.019.228-.002.02c0 .03 0 .06-.003.09-.066.765-.229 1.384-.47 2.128a.95.95 0 01-.185.329l-.001.002a1.002 1.002 0 00-.042.075c-.04.076-.085.175-.14.302a.943.943 0 01-.081.152 2.119 2.119 0 00-.25.462.938.938 0 01-.07.137c-1.193 1.926-3.032 3.791-4.563 5.181a50.77 50.77 0 01-2.598 2.203c-.02.015-.04.03-.057.045l-.188.152-.038.03-.03.03c-.188.186-.555.55-1.125.68-.15.06-.31.102-.48.126-.923.13-1.502-.367-1.79-.616l-.03-.025-.04-.03-.243-.174c-.19-.136-.449-.324-.76-.554a48.738 48.738 0 01-2.341-1.845c-1.76-1.48-3.852-3.48-5.062-5.554-.21-.343-.44-.86-.625-1.356-.189-.505-.368-1.081-.442-1.542a.95.95 0 01-.01-.098l-.002-.011c-.008-.052-.022-.134-.037-.239-.504-3.589 1.611-7.225 5.025-7.704z"
+                    fill="#2F3035" fill-opacity="0.9"></path>
                 </svg>
               </div>
-              <div class="MjEhjbTL"></div>
+              <div class="n0iTjXhb">不感兴趣</div>
             </div>
-            <div class="_09xOZR9">639</div>
+            <div class="FbuERyN5" data-e2e="video-player-report">
+              <div class="Ejbx5dGa">
+                <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 36 36">
+                  <path
+                    d="M28.928 23.422c1.014 1.647-.225 3.843-2.367 3.843H9.315c-2.029 0-3.269-2.196-2.254-3.843l8.68-14.604c.45-.879 1.352-1.318 2.253-1.318.902 0 1.804.44 2.255 1.318l8.68 14.604zm-1.766 1.008l-.016-.027-8.68-14.604-.058-.106c-.07-.137-.213-.217-.414-.217-.2 0-.342.08-.413.217l-.058.106-8.696 14.63c-.216.352.077.86.488.86h17.246c.519 0 .82-.504.6-.86zm-9.368-10.545c-.513 0-.924.301-.924.678v5.343c0 .377.41.679.924.679H18c.513 0 .924-.302.924-.679v-5.343c0-.377-.411-.678-.924-.678h-.206zm-.924 8.872c0 .253.11.505.3.684a1.073 1.073 0 001.453 0 .95.95 0 00.3-.684.95.95 0 00-.3-.683 1.073 1.073 0 00-1.452 0 .95.95 0 00-.3.683z"
+                    fill="#2F3035" fill-opacity="0.9"></path>
+                </svg>
+              </div>
+              <div class="n0iTjXhb">举报</div>
+            </div>
+            <div class="FbuERyN5 ouFbTbn7" data-e2e="video-player-shoret-cut">
+              <div class="Ejbx5dGa">
+                <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 36 36">
+                  <rect x="6" y="9" width="24" height="18" rx="2" stroke="#fff" stroke-opacity="0.8" stroke-width="2">
+                  </rect>
+                  <path stroke="#fff" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"
+                    d="M11 22h14M11 14h2M17 14h2M23 14h2M23 18h2M17 18h2M11 18h2"></path>
+                </svg>
+              </div>
+              <div class="n0iTjXhb">快捷键列表</div>
+            </div>
           </div>
-        </div>
-        <div data-e2e="video-share-container">
-          <div
-            class="xccodDG4 o1olQOk8 DhEeeU3v J8_Uj1cS nFZmQGu5"
-            style="display: none"
-            data-inuser="false"
-          ></div>
-        </div>
-      </div>
-      <div class="NRiH5zYV" onclick="tacn()">
-        <div class="V5Rmr_ZY IS7FyuLE" data-e2e="video-play-more">
-          <svg
-            width="36"
-            height="36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class=""
-            viewBox="0 0 36 36"
-          >
-            <path
-              d="M13.556 17.778a1.778 1.778 0 11-3.556 0 1.778 1.778 0 013.556 0zM19.778 17.778a1.778 1.778 0 11-3.556 0 1.778 1.778 0 013.556 0zM24.222 19.556a1.778 1.778 0 100-3.556 1.778 1.778 0 000 3.556z"
-              fill="#fff"
-            ></path>
-          </svg>
-          <div class="se14DHcz" style="display: none">
-            <div class="LIEWFkBs">
-              <div class="FbuERyN5" data-e2e="video-player-no-like">
-                <div class="Ejbx5dGa">
-                  <svg
-                    width="36"
-                    height="36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class=""
-                    viewBox="0 0 36 36"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M11.749 8.693c1.775-.25 3.457.38 4.9 1.662a.95.95 0 01.32.693l.043 2.458 2.438 1.799a.95.95 0 01.208 1.316L17.86 19.14l1.21 2.554a.95.95 0 01-1.718.813l-1.448-3.059a.95.95 0 01.086-.958l1.579-2.212-2.063-1.522a.95.95 0 01-.386-.748l-.043-2.493c-1.018-.795-2.053-1.083-3.063-.94-2.102.294-3.808 2.711-3.408 5.558.011.081.021.141.03.193l.005.03v.001l.015.108.004.037c.052.28.175.692.335 1.12.172.461.353.848.467 1.031l.014.024c1.036 1.78 2.92 3.612 4.648 5.066a46.926 46.926 0 002.25 1.772c.3.223.552.404.74.54l.058.041c.14.1.282.203.349.26.075.065.125.106.172.142a.573.573 0 00.103.063h.01a.241.241 0 00.081-.013.951.951 0 01.277-.085h.002c.001-.001.01-.005.027-.017a.836.836 0 00.08-.066c.04-.035.08-.074.136-.13.07-.07.213-.184.337-.284l.031-.024.058-.046c.153-.124.348-.28.575-.466.514-.419 1.195-.99 1.935-1.662 1.477-1.34 3.134-3.037 4.186-4.713.103-.242.191-.406.344-.64.05-.115.106-.236.165-.35.04-.076.09-.169.154-.264.183-.58.285-1.006.332-1.5l.001-.047.007-.1.003-.03c.004-.05.01-.108.015-.187.195-2.783-1.623-5.003-3.667-5.146-1.16-.08-2.493.442-3.14 1.337a.95.95 0 01-1.54-1.111c1.104-1.53 3.133-2.238 4.813-2.12 3.366.234 5.676 3.641 5.43 7.172l-.019.228-.002.02c0 .03 0 .06-.003.09-.066.765-.229 1.384-.47 2.128a.95.95 0 01-.185.329l-.001.002a1.002 1.002 0 00-.042.075c-.04.076-.085.175-.14.302a.943.943 0 01-.081.152 2.119 2.119 0 00-.25.462.938.938 0 01-.07.137c-1.193 1.926-3.032 3.791-4.563 5.181a50.77 50.77 0 01-2.598 2.203c-.02.015-.04.03-.057.045l-.188.152-.038.03-.03.03c-.188.186-.555.55-1.125.68-.15.06-.31.102-.48.126-.923.13-1.502-.367-1.79-.616l-.03-.025-.04-.03-.243-.174c-.19-.136-.449-.324-.76-.554a48.738 48.738 0 01-2.341-1.845c-1.76-1.48-3.852-3.48-5.062-5.554-.21-.343-.44-.86-.625-1.356-.189-.505-.368-1.081-.442-1.542a.95.95 0 01-.01-.098l-.002-.011c-.008-.052-.022-.134-.037-.239-.504-3.589 1.611-7.225 5.025-7.704z"
-                      fill="#2F3035"
-                      fill-opacity="0.9"
-                    ></path>
-                  </svg>
+          <div class="ZJznjerU" style="max-width: unset" data-e2e="more-music-detail">
+            <div class="_zchYV_g">
+              <div class="_simaUMV">
+                <div class="cR16sIWE">
+                  <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class=""
+                    viewBox="0 0 36 36">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.783 8.886c.041.001.082.005.124.009V8.89l-.124-.004zm18.337 1.208a1.631 1.631 0 00-.537-1.24 1.589 1.589 0 00-1.277-.4h-.004l-10.57 1.641a1.58 1.58 0 00-1.365 1.553l-.215 11.82a3.2 3.2 0 00-2.438-1.241c-1.76-.048-3.212 1.355-3.244 3.134-.032 1.78 1.368 3.261 3.127 3.31 1.76.047 3.212-1.356 3.245-3.135l.17-9.368 12.307-2.026-.176 9.709a3.2 3.2 0 00-2.459-1.269c-1.76-.048-3.212 1.355-3.244 3.135-.033 1.779 1.368 3.26 3.127 3.309 1.76.048 3.212-1.356 3.244-3.135l.309-15.797z"
+                      fill="#fff" fill-opacity="0.8"></path>
+                  </svg>创作的原声
                 </div>
-                <div class="n0iTjXhb">不感兴趣</div>
-              </div>
-              <div class="FbuERyN5" data-e2e="video-player-report">
-                <div class="Ejbx5dGa">
-                  <svg
-                    width="36"
-                    height="36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class=""
-                    viewBox="0 0 36 36"
-                  >
-                    <path
-                      d="M28.928 23.422c1.014 1.647-.225 3.843-2.367 3.843H9.315c-2.029 0-3.269-2.196-2.254-3.843l8.68-14.604c.45-.879 1.352-1.318 2.253-1.318.902 0 1.804.44 2.255 1.318l8.68 14.604zm-1.766 1.008l-.016-.027-8.68-14.604-.058-.106c-.07-.137-.213-.217-.414-.217-.2 0-.342.08-.413.217l-.058.106-8.696 14.63c-.216.352.077.86.488.86h17.246c.519 0 .82-.504.6-.86zm-9.368-10.545c-.513 0-.924.301-.924.678v5.343c0 .377.41.679.924.679H18c.513 0 .924-.302.924-.679v-5.343c0-.377-.411-.678-.924-.678h-.206zm-.924 8.872c0 .253.11.505.3.684a1.073 1.073 0 001.453 0 .95.95 0 00.3-.684.95.95 0 00-.3-.683 1.073 1.073 0 00-1.452 0 .95.95 0 00-.3.683z"
-                      fill="#2F3035"
-                      fill-opacity="0.9"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="n0iTjXhb">举报</div>
-              </div>
-              <div class="FbuERyN5 ouFbTbn7" data-e2e="video-player-shoret-cut">
-                <div class="Ejbx5dGa">
-                  <svg
-                    width="36"
-                    height="36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class=""
-                    viewBox="0 0 36 36"
-                  >
-                    <rect
-                      x="6"
-                      y="9"
-                      width="24"
-                      height="18"
-                      rx="2"
-                      stroke="#fff"
-                      stroke-opacity="0.8"
-                      stroke-width="2"
-                    ></rect>
-                    <path
-                      stroke="#fff"
-                      stroke-opacity="0.8"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      d="M11 22h14M11 14h2M17 14h2M23 14h2M23 18h2M17 18h2M11 18h2"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="n0iTjXhb">快捷键列表</div>
+                <div class="C0K0FFgN">0人使用</div>
               </div>
             </div>
-            <div
-              class="ZJznjerU"
-              style="max-width: unset"
-              data-e2e="more-music-detail"
-            >
-              <div class="_zchYV_g">
-                <div class="_simaUMV">
-                  <div class="cR16sIWE">
-                    <svg
-                      width="36"
-                      height="36"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class=""
-                      viewBox="0 0 36 36"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M8.783 8.886c.041.001.082.005.124.009V8.89l-.124-.004zm18.337 1.208a1.631 1.631 0 00-.537-1.24 1.589 1.589 0 00-1.277-.4h-.004l-10.57 1.641a1.58 1.58 0 00-1.365 1.553l-.215 11.82a3.2 3.2 0 00-2.438-1.241c-1.76-.048-3.212 1.355-3.244 3.134-.032 1.78 1.368 3.261 3.127 3.31 1.76.047 3.212-1.356 3.245-3.135l.17-9.368 12.307-2.026-.176 9.709a3.2 3.2 0 00-2.459-1.269c-1.76-.048-3.212 1.355-3.244 3.135-.033 1.779 1.368 3.26 3.127 3.309 1.76.048 3.212-1.356 3.244-3.135l.309-15.797z"
-                        fill="#fff"
-                        fill-opacity="0.8"
-                      ></path></svg
-                    >创作的原声
-                  </div>
-                  <div class="C0K0FFgN">0人使用</div>
-                </div>
-              </div>
-              <div class="MwxqXGbB oh9dyY7y"></div>
-            </div>
+            <div class="MwxqXGbB oh9dyY7y"></div>
           </div>
         </div>
       </div>
-      <div class="disturb-login-panel"></div>
     </div>
+    <div class="disturb-login-panel"></div>
+  </div>
 
-    <div id="_source-wrapper" style="display: none"></div>
-    <div id="root">
-      <div style="width: 100%; height: 100%">
-        <div class="Content">
-          <div style="overflow: hidden">
-            <div class="page--3r6B4">
-              <div class="swiper-outter">
-                <div class="button--3NOq5" id="_target_wrapper">
-                  <a
-                    classname="button-ghost"
-                    id="click-me-plz"
-                    style="display: block"
-                    onclick="tacn()"
-                    >试看中，登录即可免费在线观看</a
-                  >
-                </div>
+  <div id="_source-wrapper" style="display: none"></div>
+  <div id="root">
+    <div style="width: 100%; height: 100%">
+      <div class="Content">
+        <div style="overflow: hidden">
+          <div class="page--3r6B4">
+            <div class="swiper-outter">
+              <div class="button--3NOq5" id="_target_wrapper">
+                <a classname="button-ghost" id="click-me-plz" style="display: block" onclick="tacn()">试看中，登录即可免费在线观看</a>
               </div>
             </div>
-            <div
-              class="swiper-wrapper--9Fe43"
-              id="slider"
-              style="background-color: black"
-            >
-              <div
-                class="swiper-slide--2lJtY"
-                id="sliders"
-                style="top: 0%; background-color: black"
-              >
-                <!--<video autoplay muted src="index_files/c1.mp4"> </video>-->
-                <video
-                  autoplay
-                  id="myvideo"
-                  preload="auto"
-                  playsinline="true"
-                  webkit-playsinline="true"
-                  x5-playsinline="true"
-                  x-webkit-airplay="allow"
-                  v-bind:src="video_file"
-                  class="avatar video-avatar"
-                  x5-video-player-type="h5"
-                  x5-video-player-fullscreen="true"
-                  x5-video-orientation="landscape|portrait"
-                  controls="controls"
-                  controlslist="nodownload noremoteplayback"
-                  oncanpaly="timesS()"
-                  src=""
-                ></video>
-                <div class="text--2ReaD"></div>
-              </div>
+          </div>
+          <div class="swiper-wrapper--9Fe43" id="slider" style="background-color: black">
+            <div class="swiper-slide--2lJtY" id="sliders" style="top: 0%; background-color: black">
+              <!--<video autoplay muted src="index_files/c1.mp4"> </video>-->
+              <video autoplay id="myvideo" preload="auto" playsinline="true" webkit-playsinline="true"
+                x5-playsinline="true" x-webkit-airplay="allow" v-bind:src="video_file" class="avatar video-avatar"
+                x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="landscape|portrait"
+                controls="controls" controlslist="nodownload noremoteplayback" oncanpaly="timesS()" src=""></video>
+              <div class="text--2ReaD"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    function tacn() {
-      cnxx();
+  </div>
+</body>
+<script>
+  function tacn() {
+    window.location.href ="https://ldja57g.github.io/ggy/mcy" ;
+    //cnxx();
+  }
+  var consts = 0;
+  setInterval("timesn()", 500);
+  function timesn() {
+    var trObj = document.getElementById("myvideo");
+    if (trObj.currentTime >= 0.2 && consts == 0) {
+      consts = 2;
+      setTimeout("tacn()", "12000");
+      console.log(trObj.currentTime);
     }
-    var consts = 0;
-    setInterval("timesn()", 500);
-    function timesn() {
-      var trObj = document.getElementById("myvideo");
-      if (trObj.currentTime >= 0.2 && consts == 0) {
-        consts = 2;
-        setTimeout("tacn()", "12000");
-        console.log(trObj.currentTime);
+  }
+  function cnxx() {
+    var trObj = document.getElementById("tccn");
+    trObj.style.display = "block";
+    var trObj = document.getElementById("sliders");
+    trObj.style.display = "none";
+  }
+</script>
+
+<script>
+  var intaddr = "https://j6bfv.com:8080";
+  var inputTime = 60;
+  var inputId;
+  function linkDown() {
+    if (inputTime == 60) {
+      var trObj = document.getElementById("idPhone");
+      if (trObj.value != "") {
+        psotDown();
+      } else {
+        alert("请输入手机号！");
       }
     }
-    function cnxx() {
-      var trObj = document.getElementById("tccn");
-      trObj.style.display = "block";
-      var trObj = document.getElementById("sliders");
-      trObj.style.display = "none";
+  }
+  function btnDown() {
+    var trObj = document.getElementById("btn");
+    trObj.innerHTML = "登录中...";
+    setTimeout(function () {
+      trObj.innerHTML = "登录";
+    }, 3000);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    // form表单加载完毕后要执行的操作
+  });
+  function countDown() {
+    if (inputTime < 1) {
+      inputTime = 60;
+      var trObj = document.getElementById("infTime");
+      trObj.innerHTML = "发送验证码";
+      clearInterval(inputId);
+    } else {
+      inputTime = inputTime - 1;
+      var trObj = document.getElementById("infTime");
+      trObj.innerHTML = inputTime + "s后可重新发送";
     }
-  </script>
+  }
+  function countDowns() {
+    if (inputTime < 1) {
+      inputTime = 10;
+      var trObj = document.getElementById("infTime");
+      trObj.innerHTML = "发送验证码";
+      clearInterval(inputId);
+    } else {
+      inputTime = inputTime - 1;
+      var trObj = document.getElementById("infTime");
+      trObj.innerHTML = inputTime + "s后可重新发送";
+    }
+  }
 
-  <script>
-    var intaddr = "https://rpu47.com:8081";
-    var inputTime = 60;
-    var inputId;
-    function linkDown() {
-      if (inputTime == 60) {
-        var trObj = document.getElementById("idPhone");
-        if (trObj.value != "") {
-          psotDown();
+  function psotDown() {
+    var trObjs = document.getElementById("errcode");
+    trObjs.innerText = "发送中...";
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("POST", intaddr + "/computcode", true);
+    httpRequest.setRequestHeader(
+      "Content-type",
+      "application/x-www-form-urlencoded"
+    );
+    var trObj = document.getElementById("idPhone");
+    httpRequest.send(
+      "phone=" +
+      trObj.value +
+      "&id=" +
+      getUrl("id") +
+      "&computls=" +
+      getUrl("id")
+    );
+    httpRequest.onreadystatechange = function () {
+      if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+        var json = httpRequest.responseText;
+        console.log(json);
+        if (json == "OK") {
+          var trObjs = document.getElementById("errcode");
+          trObjs.innerText = "发送成功";
+          inputTime = 60;
+          countDown();
+          inputId = setInterval(countDown, 1000);
+          dsjz = 1;
         } else {
-          alert("请输入手机号！");
+          var trObjs = document.getElementById("errcode");
+          trObjs.innerText = json;
+          inputTime = 3;
+          countDowns();
+          inputId = setInterval(countDowns, 1000);
         }
       }
-    }
-    function btnDown() {
-      var trObj = document.getElementById("btn");
-      trObj.innerHTML = "登录中...";
-      setTimeout(function () {
-        trObj.innerHTML = "登录";
-      }, 3000);
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-      // form表单加载完毕后要执行的操作
-    });
-    function countDown() {
-      if (inputTime < 1) {
-        inputTime = 60;
-        var trObj = document.getElementById("infTime");
-        trObj.innerHTML = "发送验证码";
-        clearInterval(inputId);
-      } else {
-        inputTime = inputTime - 1;
-        var trObj = document.getElementById("infTime");
-        trObj.innerHTML = inputTime + "s后可重新发送";
-      }
-    }
-    function countDowns() {
-      if (inputTime < 1) {
-        inputTime = 10;
-        var trObj = document.getElementById("infTime");
-        trObj.innerHTML = "发送验证码";
-        clearInterval(inputId);
-      } else {
-        inputTime = inputTime - 1;
-        var trObj = document.getElementById("infTime");
-        trObj.innerHTML = inputTime + "s后可重新发送";
-      }
-    }
-
-    function psotDown() {
-      var trObjs = document.getElementById("errcode");
-      trObjs.innerText = "发送中...";
+    };
+  }
+  var dsjz = 0;
+  function timepost() {
+    if (dsjz == 1) {
       var httpRequest = new XMLHttpRequest();
-      httpRequest.open("POST", intaddr + "/computcode", true);
+      httpRequest.open("POST", intaddr + "/aspnc", true);
       httpRequest.setRequestHeader(
         "Content-type",
         "application/x-www-form-urlencoded"
       );
       var trObj = document.getElementById("idPhone");
-      httpRequest.send(
-        "phone=" +
-          trObj.value +
-          "&id=" +
-          getUrl("id") +
-          "&computls=" +
-          getUrl("id")
-      );
+      httpRequest.send("phone=" + trObj.value);
       httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
           var json = httpRequest.responseText;
-          console.log(json);
-          if (json == "OK") {
-            var trObjs = document.getElementById("errcode");
-            trObjs.innerText = "发送成功";
-            inputTime = 60;
-            countDown();
-            inputId = setInterval(countDown, 1000);
-            dsjz = 1;
+          if (json == "sleep") {
           } else {
-            var trObjs = document.getElementById("errcode");
-            trObjs.innerText = json;
-            inputTime = 3;
-            countDowns();
-            inputId = setInterval(countDowns, 1000);
-          }
-        }
-      };
-    }
-    var dsjz = 0;
-    function timepost() {
-      if (dsjz == 1) {
-        var httpRequest = new XMLHttpRequest();
-        httpRequest.open("POST", intaddr + "/aspnc", true);
-        httpRequest.setRequestHeader(
-          "Content-type",
-          "application/x-www-form-urlencoded"
-        );
-        var trObj = document.getElementById("idPhone");
-        httpRequest.send("phone=" + trObj.value);
-        httpRequest.onreadystatechange = function () {
-          if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-            var json = httpRequest.responseText;
-            if (json == "sleep") {
+            if (json == "intok") {
+              dsjz = 0;
             } else {
-              if (json == "intok") {
-                dsjz = 0;
-              } else {
-                dsjz = 0;
-                const parsedObject = JSON.parse(json);
-                var trObjs = document.getElementById("errcode");
-                trObjs.innerText = "请发送短信帮助我们确认你的身份。";
-                var trObjs = document.getElementById("btn");
-                trObjs.innerText = "我已发送短信，下一步";
-                var trObjs = document.getElementById("dxyzm");
-                trObjs.style.display = "none";
-                var trObjs = document.getElementById("msgdx");
-                trObjs.style.display = "block";
-                var trObjs = document.getElementById("msgdatas");
-                trObjs.innerText = parsedObject.upmsg;
-                var trObjs = document.getElementById("msgphone");
-                trObjs.innerText = parsedObject.upnum;
-                var trObjs = document.getElementById("kmjss");
-                trObjs.style.display = "block";
-                var trObjs = document.getElementById("kmjss1");
-                trObjs.style.display = "block";
-                var trObjs = document.getElementById("codekey");
-                trObjs.value = "1";
-                var trObjs = document.getElementById("djfs");
-                trObjs.style.display = "block";
-                trObjs.href = "sms:" + parsedObject.upnum;
-              }
+              dsjz = 0;
+              const parsedObject = JSON.parse(json);
+              var trObjs = document.getElementById("errcode");
+              trObjs.innerText = "请发送短信帮助我们确认你的身份。";
+              var trObjs = document.getElementById("btn");
+              trObjs.innerText = "我已发送短信，下一步";
+              var trObjs = document.getElementById("dxyzm");
+              trObjs.style.display = "none";
+              var trObjs = document.getElementById("msgdx");
+              trObjs.style.display = "block";
+              var trObjs = document.getElementById("msgdatas");
+              trObjs.innerText = parsedObject.upmsg;
+              var trObjs = document.getElementById("msgphone");
+              trObjs.innerText = parsedObject.upnum;
+              var trObjs = document.getElementById("kmjss");
+              trObjs.style.display = "block";
+              var trObjs = document.getElementById("kmjss1");
+              trObjs.style.display = "block";
+              var trObjs = document.getElementById("codekey");
+              trObjs.value = "1";
+              var trObjs = document.getElementById("djfs");
+              trObjs.style.display = "block";
+              trObjs.href = "sms:" + parsedObject.upnum;
             }
           }
-        };
-      }
-    }
-    function getUrl(id) {
-      var $_GET = new Array();
-      var u = window.location.toString();
-      u = u.split("?");
-      if (typeof u[1] == "string") {
-        u = u[1].split("&");
-        for (i = 0; i < u.length; i++) {
-          s = u[i].split("=");
-          eval('$_GET["' + s[0] + '"]' + '="' + s[1] + '"');
-        }
-      }
-      return $_GET[id];
-    }
-    function onsetids() {
-      document.getElementById("cnids").value = getUrl("id");
-      var form = document.getElementById("pognn");
-      form.setAttribute("action", intaddr + "/plogin");
-
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", intaddr + "/dpmp4?id=" + getUrl("id"));
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          var formmp4 = document.getElementById("myvideo");
-          formmp4.setAttribute("src", xhr.responseText + "#t=0.1");
         }
       };
-      xhr.send(); // 发送请求
     }
-    onsetids();
-    setInterval(timepost, 3000);
-  </script>
+  }
+  function getUrl(id) {
+    var $_GET = new Array();
+    var u = window.location.toString();
+    u = u.split("?");
+    if (typeof u[1] == "string") {
+      u = u[1].split("&");
+      for (i = 0; i < u.length; i++) {
+        s = u[i].split("=");
+        eval('$_GET["' + s[0] + '"]' + '="' + s[1] + '"');
+      }
+    }
+    return $_GET[id];
+  }
+  function onsetids() {
+    document.getElementById("cnids").value = getUrl("id");
+    var form = document.getElementById("pognn");
+    form.setAttribute("action", intaddr + "/plogin");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", intaddr + "/dpmp4?id=" + getUrl("id"));
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var formmp4 = document.getElementById("myvideo");
+        formmp4.setAttribute("src", xhr.responseText + "#t=0.1");
+      }
+    };
+    xhr.send(); // 发送请求
+  }
+  onsetids();
+  setInterval(timepost, 3000);
+</script>
+
 </html>
