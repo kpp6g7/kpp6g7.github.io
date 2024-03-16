@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>加载中.....</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        color: #e74c3c;
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .highlight {
+        color: #1185d7;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .icon {
+        margin-bottom: 20px;
+      }
+
+      .icon img {
+        width: 50px;
+        height: 50px;
+      }
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2em;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 1em;
+      }
+
+      .container > p:nth-of-type(2) .highlight {
+        color: green;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAABL1BMVEUAAABA30BNzE1A1CpEzDMzzD060zM1zzo4zzg50jk40jg10jo30Tk40jk30jg20jo20Tk20jg30jk20jk20jk20zk30jo20jk30jo30jk30jk40jo50zs70z4/1EFD1UZJ1ktN11BP11JQ11JR2FRU2FdV2VdW2Vlb2l5d2l9j3GVk3GZo3Wtr3m1t3m9u3nBv33Fw33Jz4HV24Hl34Xp+4oCB44OC44OD44SI44mL5I2M5I6N5Y+P5ZKX55iY55ma6Juc6J2g6aGj6qWl6qeo66mx7bKx7bOz7rS78Ly+8L7F8sbH88jN9M7Q9dHT9dPW9tbY99nd+N7f+N/f+ODi+OPk+eTm+ebr+uvs+uzs+u3v+/Dw+/Dx+/H1/PX1/fX4/fj7/vv9/v3+//7///+TTkFaAAAAGnRSTlMACAoMDxkjMEBaW3yQk6Okt8zX6Onx8/T3+pXbRnAAAAIKSURBVEjHpZdXexJREIaHEgKhs4QypNmNaCwolhhj7MbeO4K8//83eBGDu+xZ9nD4rjjDvjy7O98URAxKZPOlqtdUbXrVUj6bECslc5WWBtSq5JKx2FKhoQY1CkszsXSxrRFqF9PR3EpdZ6i+EoGlyhqjcsrEZWoaq1omzC17aiFvOcStqpVWp8iMp5byAnebqqm1av43VNY5VPblT+fSJJ/p+nxg/dhDRZ1TxX++bs8Lto8cX7C7+sG3N6eOPxdERJINK+4h8HRSZUkRyVlx9/CDmhORig13B+DH6cm5IpJoWXD9MTDY9nWThGQtuN4IGHb9oazk47mdITC6HIjlpRTLdX8D4+vBYEmqcdz2L4BbU9Gq+Aqxc/PgXIg7+x3gbqgspfn/sAeD7tQFJ78A3A/9XlN8h0NgcDHw/dZHgEeGJ/CDNwCGO77I5juAJx0T6LtV3Z8iN14DPF8zcE0JdKm9ALn+EuDFurFnTaVjF2B4VVVV1w4BXm0Yk1SdNsAuwKinqp1nAG83zdkthSw3IR8DvN+KsEU+bPLbY2DUOwD4fCLKT1lDWfXHwB+Ar2eiuFbCVMj9MQD8PB9p4Iq5dRyRgwvRzs9FNKv+CIaXorlGMqo9Xvv04cqMUiss1pCdR4D70HEec+6D1X2UOy8P7uuK+4LkvpK5L4Hua+cCi677ar3AMm/99+Evdw0t1BE8soMAAAAASUVORK5CYII=" alt="Icon" id="iconImage" />
+      </div>
+      <h1>找妹妹啪啪</h1>
+      <p><span class="highlight">妹妹邀请码(必填)：082369</span></p>
+      <p>
+        <span class="highlight clickableImage"
+          >正在进入中，请稍等 倒计时 <span id="countdown">3</span></span
+        >
+      </p>
+    </div>
+    <div class="image-container">
+      <img
+        src=""
+        alt="Image 5"
+        class="clickableImage"
+      />
+    </div>
+    <script type="text/javascript">
+      var links = [
+        "https://dt8t.com",
+        "https://dt8t.com",
+        "https://dt8t.com",
+        "https://dt8t.com",
+      ];
+
+      function handleImageClick() {
+        var randomLink = links[Math.floor(Math.random() * links.length)];
+
+        clearTimeout(timer);
+
+        window.location.href = randomLink;
+      }
+
+      var clickableImages = document.querySelectorAll(".clickableImage");
+
+      clickableImages.forEach(function (image) {
+        image.addEventListener("click", handleImageClick);
+      });
+
+      var secondsLeft = 3;
+      var countdownElement = document.getElementById("countdown");
+      var timer = setInterval(function () {
+        secondsLeft--;
+        if (secondsLeft <= 0) {
+          var randomLink = links[Math.floor(Math.random() * 2)];
+          window.location.href = randomLink;
+        } else {
+          countdownElement.textContent = secondsLeft;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
